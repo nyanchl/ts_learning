@@ -1,1 +1,1 @@
-class Car {}
+console.log('hoge')
