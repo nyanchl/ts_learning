@@ -1,34 +1,42 @@
 "use strict";
-class Persson {
-    constructor(initname, initage) {
-        this.initname = initname;
-        this.initage = initage;
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.name = name;
+        this.age = age;
     }
-    incrementAge() {
-        this.initage += 1;
-    }
-    greeting() {
-        this.incrementAge();
-        console.log(`Hello ${this.initname}. ${this.initage}`);
-    }
-}
-const giveperson = new Persson('John', 30);
-giveperson.greeting();
-class Teacher extends Persson {
-    set major(value) {
-        if (!value) {
-            throw new Error('This is not a subject');
+    static checkage(age) {
+        if (age >= 18) {
+            console.log('Adult');
         }
-        this._major = value;
+        else {
+            console.log('Child');
+        }
     }
-    constructor(initname, initage, _major) {
-        super(initname, initage);
-        this._major = _major;
+    IncreaseAge() {
+        this.age++;
     }
-    greeting() {
-        console.log(`Hello ${this.initname}. ${this.initage} ${this._major}`);
+    ShowProfile() {
+        this.IncreaseAge();
+        console.log(`I'm ${this.name}, ${this.age} years old.`);
+        this.greeting();
     }
 }
-const teacher = new Teacher('John', 30, 'Math');
-// teacher.subject = 'Science';
-teacher.greeting();
+class Teacher extends Person {
+    greeting() {
+        console.log('Hello, nice to meet you.');
+    }
+    constructor(name, age, subject) {
+        super(name, age);
+        this.subject = subject;
+        this.subject = subject;
+    }
+    ShowProfile() {
+        super.ShowProfile();
+        console.log(`I teach ${this.subject}.`);
+    }
+}
+const person = new Teacher('Tom', 20, 'Math');
+person.ShowProfile();
+Person.checkage(15);

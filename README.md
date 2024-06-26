@@ -11,3 +11,6 @@ tsconfig.jsonにinclude、excludeでファイルを指定したらtscを実行�
 
 2024 6/24（月）
 クラス内で定義できるpublic　private　readonly クラスの継承の仕方について理解
+
+2024 6/26（水）
+callback関数の使い方をまだ理解できていない。TypeScriptの動画を見ても何も作れないなと思ったから、Udemyでこの講座と一緒に買ったReactの講座を見始めた

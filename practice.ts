@@ -1,6 +1,27 @@
-const addnum = (num1: number, num2: number) => {
-    return num1 + num2;
+interface Person {
+    name: string;
+    age: number;
+    greeting(message: string): void;
 }
-const hoge = (str1: string, str2: string) => {
-    return str1 + str2;
+class Student implements Person{
+    constructor(public name: string, public age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    greeting(message: string) {
+        console.log(message);
+    }
 }
+type BloodType = {
+    bloodtype: string;
+}
+class Child implements BloodType {
+    constructor(public bloodtype: string) {
+        this.bloodtype = bloodtype
+    }
+    myblood() {
+        console.log(`私の血液型は${this.bloodtype}です。`)
+    }
+}
+const bloodtype = new Child('A');
+bloodtype.myblood();
